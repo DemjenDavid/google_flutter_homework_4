@@ -78,26 +78,38 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Material(
-                              elevation: 8,
-                              borderRadius: BorderRadius.circular(20),
-                              child: Container(
-                                width: MediaQuery.of(context).size.width * .6,
-                                height: 300,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    image: DecorationImage(
-                                      image: NetworkImage(cover),
-                                      fit: BoxFit.cover
+                            Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Material(
+                                  elevation: 8,
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Container(
+                                    width: MediaQuery.of(context).size.width * .6,
+                                    height: 300,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        image: DecorationImage(
+                                          image: NetworkImage(cover),
+                                          fit: BoxFit.cover
+                                        ),
+                                        boxShadow: const [
+                                          BoxShadow(
+                                              blurRadius: 30.0,
+                                              color: Colors.black,
+                                              offset: Offset(0, 70))
+                                        ],
                                     ),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                          blurRadius: 30.0,
-                                          color: Colors.black,
-                                          offset: Offset(0, 70))
-                                    ],
+                                  ),
                                 ),
-                              ),
+                                const Align(
+                                  alignment: Alignment.center,
+                                  child: Icon(
+                                      Icons.play_circle_outline,
+                                      size: 40.0,
+                                  ),
+                                )
+                              ],
                             ),
                             const SizedBox(height: 30),
                             Text(
